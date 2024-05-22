@@ -1,0 +1,172 @@
+ /* 基础样式 */
+ /* .h2: 设置标题样式，字体颜色为 --bg-secondary 变量定义的颜色，字体大小为2rem，字体粗细为500。 */
+ .h2 {
+     color: var(--bg-secondary);
+     font-size: 2rem;
+     font-weight: 500;
+ }
+
+ /* .h3: 设置标题样式，字体大小为2.4rem，字体粗细为400。 */
+ .h3 {
+     font-size: 2.4rem;
+     font-weight: 400;
+ }
+
+
+ /* .module-3: 设置类名为 .module-3 的元素的内边距为100px。 */
+ .module-3 {
+     padding: 100px;
+ }
+
+ /* .section-title: 设置标题样式，使用 Kai 字体，字体颜色为 --bg-banner 变量定义的颜色，字体大小为4.5rem，居中显示。 */
+ .section-title {
+     display: inline-block;
+     font-family: "Antonio", sans-serif;
+     color: gainsboro;
+     font-size: 4.5rem;
+     text-align: center;
+ }
+
+ /* .module-3-list: 设置类名为 .module-3-list 的元素为弹性盒子，水平方向排列，换行时自动换行，子项之间的间距为30px。 */
+ .module-3-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 30px;
+ }
+
+ /* .module-3-card: 设置类名为 .module-3-card 的元素为相对定位，边框半径为20px，内容溢出隐藏。 */
+ .module-3-card {
+     position: relative;
+     border-radius: 20px;
+     overflow: hidden;
+ }
+
+ /* .module-3-card::after: 使用伪元素 ::after 为 .module-3-card 添加背景渐变，实现卡片内容部分的渐变效果。 */
+ .module-3-card::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(hsla(222, 46%, 17%, 0), hsla(222, 46%, 17%, 0.7));
+ }
+
+ /* .module-3-card img: 设置卡片图片的过渡效果，过渡时间为0.35秒，缓动函数为ease。 */
+ .module-3-card img {
+     transition: 0.35s ease;
+ }
+
+ /* .module-3-card:hover img: 当鼠标悬停在卡片上时，图片放大1.1倍。 */
+ .module-3-card:hover img {
+     transform: scale(1.1);
+ }
+
+ /* .module-3-card .card-content: 设置卡片内容区域的样式，绝对定位在卡片底部，宽度100%，内边距为30px，层级为1。 */
+ .module-3-card .card-content {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     padding: 30px;
+     z-index: 1;
+ }
+
+ /* .module-3-card .card-title: 设置卡片标题样式，字体颜色为 --bg-primary 变量定义的颜色，字体为 base。 */
+ .module-3-card .card-title {
+     color: gainsboro;
+     font-family: "Antonio", sans-serif;
+ }
+
+ /* 选择第二个 .section 元素，设置其背景颜色为 --bg-banner 变量定义的颜色。 */
+ .section:nth-child(2) {
+     background-color: var(--bg-banner);
+ }
+
+ /* 选择第二个 .section 元素中的 .section-title 元素，使用 Kai 字体，字体颜色为 --color-primary 变量定义的颜色，字体大小为4rem。 */
+ .section:nth-child(2) .section-title {
+     font-family: "Antonio", sans-serif;
+     color: var(--color-primary);
+     font-size: 4rem;
+ }
+
+ /* 选择第二个 .section 元素中的 .h2 元素，字体颜色为 --bg-primary 变量定义的颜色，字体大小为2rem，字体粗细为500。 */
+ .section:nth-child(2) .h2 {
+     color: var(--bg-primary);
+     font-size: 2rem;
+     font-weight: 500;
+ }
+
+ /* .module-3-small-title: 设置小标题的样式，字体为 base，居中显示，底部外边距为50px，字体颜色为 --bg-banner 变量定义的颜色。 */
+ .module-3-small-title {
+     font-family: "Antonio", sans-serif;
+     text-align: center;
+     margin-bottom: 50px;
+     color: gainsboro;
+ }
+
+ /* .module-5-list: 设置热门景点列表为网格布局，子项之间的间距为30px。 */
+ .module-5-list {
+     display: grid;
+     gap: 30px;
+ }
+
+ /* .module-5-card: 设置热门景点卡片的样式，字体颜色为 --bg-banner 变量定义的颜色，添加了阴影效果，边框半径为20px，内容溢出隐藏。 */
+ .module-5-card {
+     color: var(--bg-banner);
+     box-shadow: 0 20px 30px hsla(0, 0%, 0%, 0.1);
+     border-radius: 20px;
+     overflow: hidden;
+     background-color: gainsboro;
+ }
+
+ /* .module-5-card .top: 设置热门景点卡片的顶部部分的样式，内容溢出隐藏，并添加了2秒的过渡效果。 */
+ .module-5-card .top {
+     overflow: hidden;
+     transition: all 2s;
+ }
+
+ /* 当鼠标悬停在热门景点卡片的顶部部分时，卡片中的图片放大1.2倍。 */
+ .module-5-card .top:hover img {
+     transform: scale(1.2);
+ }
+
+ /* .module-5-card p: 设置热门景点卡片中的段落样式，底部外边距为20px，首行文本缩进2em。 */
+ .module-5-card p {
+     margin-bottom: 20px;
+     text-indent: 2em;
+ }
+
+ /* .module-5-card h3: 设置热门景点卡片中的标题样式，右对齐，字体大小为15px。 */
+ .module-5-card h3 {
+     text-align: right;
+     font-size: 15px;
+ }
+
+ /* 响应式设置 */
+
+ @media (min-width: 768px) {
+
+     /* 在视口宽度大于等于768px时，设置景点列表中的每个列表项的宽度为占据33.33%减去20px的宽度。 */
+     .module-3-list>li {
+         width: calc(33.33% - 20px);
+     }
+
+     /* 在视口宽度大于等于768px时，设置景点列表中带有类名 .big 的项的宽度为占据50%减去20px的宽度。 */
+     .module-3-list .big {
+         width: calc(50% - 20px);
+     }
+ }
+
+ @media (min-width: 992px) {
+
+     /* 在视口宽度大于等于992px时，设置热门景点列表为3列。 */
+     .module-5-list {
+         grid-template-columns: repeat(3, 1fr);
+     }
+ }
+
+ @media (min-width: 1200px) {
+
+     /* 并为类名为 .card-content 的元素添加内边距为30px。 */
+     .card-content {
+         padding: 30px;
+     }
+ }

@@ -1,0 +1,366 @@
+:root {
+
+
+  --chinese-violet_30: hsla(224, 14%, 46%, 0.3);
+  --chinese-violet: hsl(224, 14%, 46%);
+  --sonic-silver: hsl(208, 7%, 46%);
+  --old-rose_30: hsla(200, 37%, 62%, 0.3);
+  --ghost-white: hsl(233, 33%, 95%);
+  --light-pink: #455b70;
+  --light-gray: hsl(0, 0%, 80%);
+  --old-rose: #455b70;
+  /* --seashell: hsl(20, 43%, 93%); */
+  --charcoal: hsl(203, 30%, 26%);
+  --white: hsl(0, 0%, 100%);
+
+
+
+  --ff-philosopher: 'Philosopher', sans-serif;
+  --ff-poppins: 'Poppins', sans-serif;
+
+  --fs-1: 4rem;
+  --fs-2: 3.2rem;
+  --fs-3: 2.7rem;
+  --fs-4: 2.4rem;
+  --fs-5: 2.2rem;
+  --fs-6: 2rem;
+  --fs-7: 1.8rem;
+
+  --fw-500: 500;
+  --fw-700: 700;
+
+
+
+  --section-padding: 80px;
+
+
+  --shadow-1: 4px 6px 10px hsla(231, 94%, 7%, 0.06);
+  --shadow-2: 2px 0 15px 5px hsla(231, 94%, 7%, 0.06);
+  --shadow-3: 3px 3px var(--chinese-violet);
+  --shadow-4: 5px 5px var(--chinese-violet);
+
+  --radius-5: 5px;
+  --radius-10: 10px;
+
+
+
+  --polygon: polygon(100% 29%,100% 100%,19% 99%,0 56%);
+
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+}
+
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a,
+img,
+span,
+ion-icon { display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { height: auto; }
+
+ion-icon { pointer-events: none; }
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--sonic-silver);
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+:focus-visible { outline-offset: 4px; }
+
+::selection {
+  background-color: var(--old-rose);
+  color: var(--white);
+}
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
+
+::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
+
+::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
+
+
+.container { padding-inline: 15px; }
+
+.section { padding-block: var(--section-padding); }
+
+.section:nth-child(odd) { background-color: var(--seashell); }
+
+.h2,
+.h3 {
+  color: var(--charcoal);
+  line-height: 1.2;
+}
+
+.h2 { font-size: var(--fs-3); }
+
+.h3 { font-size: var(--fs-5); }
+
+.section-text { font-size: var(--fs-7); }
+
+.has-before,
+.has-after {
+  position: relative;
+  z-index: 1;
+}
+
+.has-before::before,
+.has-after::after {
+  content: "";
+  position: absolute;
+}
+
+.section-title { text-align: center; }
+
+.grid-list {
+  display: grid;
+  gap: 25px;
+}
+
+.btn-link {
+  color: var(--old-rose);
+  font-weight: var(--fw-500);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition-1);
+}
+
+.btn-link:is(:hover, :focus) { color: var(--chinese-violet); }
+
+.btn-primary:is(:hover, :focus) { background-color: var(--chinese-violet); }
+
+.btn-secondary:is(:hover, :focus) {
+  background-color: var(--old-rose);
+  color: var(--white);
+}
+
+
+
+.navbar-link:is(:hover, :focus) { color: var(--old-rose); }
+
+
+.play-btn:is(:hover, :focus) { color: var(--old-rose); }
+
+
+
+.benefits .section-text {
+  text-align: center;
+  margin-block: 8px 25px;
+}
+
+.benefits-card {
+  padding: 25px;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-5);
+  overflow: hidden;
+  transition: var(--transition-2);
+}
+
+.benefits-card::before,
+.benefits-card::after {
+  bottom: 0;
+  right: 0;
+  clip-path: var(--polygon);
+  transition: var(--transition-2);
+}
+
+.benefits-card::before {
+  width: 80px;
+  height: 80px;
+  background-color: var(--old-rose_30);
+  transform: translateY(60px);
+}
+
+.benefits-card::after {
+  width: 70px;
+  height: 70px;
+  background-color: var(--chinese-violet_30);
+  transform: translateY(65px);
+}
+
+.benefits-card:is(:hover, :focus-within) { transform: translateY(-10px); }
+
+.benefits-card:is(:hover, :focus-within)::before, .benefits-card:is(:hover, :focus-within)::after { transform: translateY(0); }
+
+.benefits-card:is(:hover, :focus-within)::after { transition-delay: 0.1s; }
+
+.benefits-card .card-icon {
+  background-color: var(--old-rose);
+  max-width: max-content;
+  padding: 10px;
+  box-shadow: var(--shadow-3);
+  transition: var(--transition-1);
+}
+
+.benefits-card:is(:hover, :focus) .card-icon { box-shadow: none; }
+
+.benefits-card .card-title { margin-block: 20px 15px; }
+
+.benefits-card .btn-link { margin-block-start: 15px; }
+
+
+
+.chapter-card:is(:hover, :focus-within) { transform: translateY(-10px); }
+
+
+
+.pricing-card:is(:hover, :focus-within) { box-shadow: var(--shadow-4); }
+
+.pricing-card:is(:hover, :focus-within) { transform: translateY(-10px); }
+
+
+
+.author :is(.section-subtitle, .section-title) { text-align: left; }
+
+
+
+.achievement-card:is(:hover, :focus-within) { transform: translateY(-10px); }
+
+
+
+.contact-card .card-link:is(:hover, :focus) { color: var(--old-rose); }
+
+.social-link:is(:hover, :focus) {
+  background-color: var(--chinese-violet);
+  box-shadow: none;
+}
+
+
+@media (min-width: 575px) {
+
+
+  :root {
+
+    --fs-2: 4.5rem;
+    --fs-3: 3.5rem;
+    --fs-5: 2.5rem;
+
+  }
+
+
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .section-text { --fs-7: 2rem; }
+
+}
+
+
+
+
+@media (min-width: 768px) {
+
+  :root {
+
+    --fs-2: 4.8rem;
+
+  }
+
+
+
+  .container { max-width: 720px; }
+
+  .grid-list { grid-template-columns: 1fr 1fr; }
+
+
+
+
+
+  .benefits :is(.section-title, .section-text) { text-align: left; }
+
+  .benefits-content { grid-column: 1 / 3; }
+
+
+  :is(.chapters, .pricing) .grid-list li:last-child {
+    grid-column: 1 / 3;
+    max-width: calc(50% - 12.5px);
+    width: 100%;
+    margin-inline: auto;
+  }
+
+
+}
+
+
+
+
+@media (min-width: 992px) {
+
+
+
+  :root {
+
+
+    --fs-2: 5.4rem;
+    --fs-3: 4rem;
+
+  }
+
+
+  .container { max-width: 960px; }
+
+  .grid-list { grid-template-columns: repeat(3, 1fr); }
+
+
+  .benefits .grid-list {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+  }
+
+  .benefits-content { max-width: 80%; }
+
+
+
+  :is(.chapters, .pricing) .grid-list li:last-child { all: unset; }
+
+
+
+}
+
+
+@media (min-width: 1200px) {
+
+  :root {
+
+
+    --fs-2: 6rem;
+    --fs-3: 4.5rem;
+    --fs-4: 3rem;
+    --fs-5: 3rem;
+
+  }
+
+  .container { max-width: 1140px; }
+
+}
